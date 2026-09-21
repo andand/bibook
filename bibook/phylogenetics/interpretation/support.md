@@ -3,7 +3,7 @@ authors:
   - name: Anders Andersson
 ---
 
-# Evaluating Support
+# Evaluating Trees
 
 Tree inference and tree evaluation answer different questions. An optimality criterion (e.g. maximum likelihood or maximum parsimony) selects a preferred tree, while support analysis assesses which parts of the tree are stable when the data are perturbed. Stability is necessary for trusting a clade, but as discussed below it is not sufficient.
 
