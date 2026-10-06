@@ -27,19 +27,19 @@ The model specifies how character states change along branches. Its parameters m
 
 ## Transition probabilities under the Jukes-Cantor model
 
-The Jukes-Cantor model provides a simple example. It assumes that A, C, G and T have equal equilibrium frequencies and that all six types of nucleotide substitution occur at the same rate. Let $\alpha$ be the expected substitution rate per site per unit time and let $t$ be the elapsed time. The expected branch length is then $d=\alpha t$ substitutions per site.
+The Jukes–Cantor model provides a simple example. It assumes that A, C, G and T have equal equilibrium frequencies and that all nucleotide substitutions occur at the same rate. Let $\alpha$ be the instantaneous rate of change from one given nucleotide to a particular other nucleotide, per unit time—for example, from A to G. Since each nucleotide can change to three other nucleotides, the overall substitution rate per site is $3\alpha$. After an elapsed time $t$, the expected branch length is therefore $d=3\alpha t$ substitutions per site.
 
 If a site begins with nucleotide $i$, the probability that nucleotide $i$ is observed after time $t$ is
 
 $$
-P_{ii}(t)=\frac{1}{4}+\frac{3}{4}e^{-4\alpha t/3}
+P_{ii}(t)=\frac{1}{4}+\frac{3}{4}e^{-4\alpha t}
 =\frac{1}{4}+\frac{3}{4}e^{-4d/3}.
 $$
 
 For a particular different nucleotide $j$, where $i\neq j$, the probability is
 
 $$
-P_{ij}(t)=\frac{1}{4}-\frac{1}{4}e^{-4\alpha t/3}
+P_{ij}(t)=\frac{1}{4}-\frac{1}{4}e^{-4\alpha t}
 =\frac{1}{4}-\frac{1}{4}e^{-4d/3}.
 $$
 
@@ -63,7 +63,7 @@ Thus, if the ancestral state is A, the descendant is A with probability approxim
 As $d$ becomes very large, both $P_{ii}$ and each $P_{ij}$ approach $1/4$. The descendant state then contains almost no information about the ancestral state: repeated substitutions have produced saturation.
 
 ```{note}
-Sequence data identify the expected amount of change along a branch, $d=\alpha t$, but not the rate $\alpha$ and the time $t$ separately. The same branch length could result from a high rate over a short time or a low rate over a long time.
+Sequence data identify the expected amount of change along a branch, $d=3\alpha t$, but not the rate $\alpha$ and the time $t$ separately. The same branch length could result from a high rate over a short time or a low rate over a long time.
 
 This does not prevent tree reconstruction, because the transition probabilities depend only on the product $d$. Branch lengths are therefore estimated directly in expected substitutions per site. Estimating evolutionary rates or absolute divergence times separately requires additional assumptions or calibration information, such as a molecular clock, fossils or dated samples.
 
